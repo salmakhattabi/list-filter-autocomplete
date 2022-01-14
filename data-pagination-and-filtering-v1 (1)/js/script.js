@@ -100,16 +100,24 @@ createSearchField();
 function showPage(list, page) {
   // Filter results
   const filteredLists = filterResults(list);
+  // select the element with a class of `student-list` and assign it to a variable
+
+  let ul = document.querySelector(".student-list");
+  let noResults = document.querySelector(".no-results");
+  // set the innerHTML property of the variable you just created to an empty string
+  ul.innerHTML="";
+  if(filteredLists.length === 0 && noResults.innerHTML === '') {
+    noResults.insertAdjacentHTML('beforeend', `<div class="container"><div class="no-result"></div></div>`);
+    return;
+  }
+  else {
+    noResults.innerHTML = '';
+  }
   // Add Pagination
   addPagination(filteredLists);
   const itemsPerpage = 9;
   const startIndex = (page*itemsPerpage)-itemsPerpage;
   const endIndex= page * itemsPerpage ;
-  // select the element with a class of `student-list` and assign it to a variable
-
-  let ul = document.querySelector(".student-list");
-  // set the innerHTML property of the variable you just created to an empty string
-  ul.innerHTML="";
  // loop over the length of the `list` parameter
  // inside the loop create a conditional to display the proper students
   for (let i=0; i <filteredLists.length ;i++){
