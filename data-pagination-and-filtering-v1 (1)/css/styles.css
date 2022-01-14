@@ -219,3 +219,65 @@ header h2 {
 		box-shadow: 0 4px 16px 0 rgba(22, 42, 90, 0.09);
 	}
 }
+
+div#results {
+  position: absolute;
+  background: #fff;
+  z-index: 9;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0px 2px 6px 1px #1e90ff1c;
+  display: none;
+}
+
+div#results.active {
+  display: block;
+}
+
+.autocomplete-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover {
+  border-bottom-color: #2989b6;
+  background-color: #1e8fff13;
+}
+
+.autocomplete-item img {
+  padding: 5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: center;
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.info-container p {
+  padding: 5px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+div#results .autocomplete-item:nth-last-child(1) {
+  border-bottom: 0;
+}
